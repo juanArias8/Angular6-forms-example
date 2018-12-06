@@ -1,0 +1,44 @@
+.card {
+  margin-top: 20px;
+  border: 2px solid gray;
+}
+
+.card-content {
+  padding-top: 0 !important;
+}
+
+h4 {
+  color: #26A69A;
+}
+
+.text-description {
+  font-size: 1.2rem;
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+}
+
+.down-more-info {
+  background-color: #26A69A;
+  color: #000;
+  padding-top: 3px;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+}
+
+.info-title {
+  font-size: 1.3rem;
+  margin-right: 10px;
+}
+
+.course-info {
+  margin-bottom: -20px;
+}
+
+.tag {
+  border-radius: 20px;
+}
+
+.card-action {
+  height: 70px !important;
+}

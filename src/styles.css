@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+.edit {
+  color: #42a5f5;
+  cursor: pointer;
+}
+
+.delete {
+  color: #ef5350;
+  cursor: pointer;
+}

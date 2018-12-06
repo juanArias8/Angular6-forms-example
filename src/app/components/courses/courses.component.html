@@ -1,0 +1,55 @@
+<div *ngIf="courses?.length > 0; else noCourses;">
+  <div *ngFor="let course of courses" class="card white black-text z-depth-5">
+    <div class="card-content">
+      <h4 class="center-align">{{course.name}}</h4>
+      <hr>
+      <p class="text-description center-align">{{course.description}}</p>
+      <div class="row course-info">
+        <div class="col s12 l6">
+          <ul class="collection">
+            <li class="collection-item">
+              <span class="info-title"><b>Fecha: </b></span><span>{{course.date}}</span>
+            </li>
+            <li class="collection-item">
+              <span class="info-title"><b>Idioma: </b></span><span>{{course.language}}</span>
+            </li>
+          </ul>
+        </div>
+        <div class="col s12 l6">
+          <ul class="collection">
+            <li class="collection-item">
+              <span class="info-title"><b>Profesor: </b></span><span>{{course.teacher}}</span>
+            </li>
+            <li class="collection-item">
+              <span class="info-title"><b>Precio: </b></span><span>${{course.price}}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="card-action">
+      <div class="row">
+        <div class="col s8">
+          <span class="tag blue-grey"> <span class="tag btn green">{{course.technology}}</span></span>
+        </div>
+        <div class="col s2 center-align">
+          <i (click)="editCourse(course)" class="material-icons edit">edit</i>
+        </div>
+        <div class="col s2 center-align">
+          <i (click)="deleteCourse($event, course)" class="material-icons delete">delete</i></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #noCourses>
+  <div class="card red lighten-2 z-depth-5">
+    <div class="card-content black-text">
+      <h2 class="center-align">No hay cursos registrados</h2>
+      <hr class="black">
+      <p class="flow-text center-align">
+        Lo sentimos, aún no se han registrado cursos, por favor inténtalo más tarde.
+      </p>
+    </div>
+  </div>
+</ng-template>

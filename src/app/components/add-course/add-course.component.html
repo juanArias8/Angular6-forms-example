@@ -1,0 +1,90 @@
+<div class="form-container">
+  <form (ngSubmit)="saveCourse(formData)" #formData="ngForm" class="z-depth-5">
+    <div class="row">
+      <div class="input-field col s12">
+        <input [(ngModel)]="course.name" #name="ngModel" id="name" name="name" type="text" class="validate" required
+               minlength="8" maxlength="40">
+        <label class="active" for="name">* Ingrese el nombre</label>
+        <span class="helper-text" data-error="Inválido" data-success="Correcto"></span>
+        <div *ngIf="name.touched && !name.valid">
+          <small *ngIf="name.errors.required" class="red-text">Campo es requerido</small>
+          <small *ngIf="name.errors.minlength" class="red-text">
+            Campo debe ser de al menos {{name.errors.minlength.requiredLength}}
+          </small>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <input [(ngModel)]="course.description" #description="ngModel" id="description" name="description"
+               type="text" class="validate" required minlength="20" maxlength="200">
+        <label class="active" for="description">* Ingrese una descripción</label>
+        <span class="helper-text" data-error="Inválido" data-success="Correcto"></span>
+        <div *ngIf="description.touched && !description.valid">
+          <small *ngIf="description.errors.required" class="red-text">Campo es requerido</small>
+          <small *ngIf="description.errors.minlength" class="red-text">
+            Campo debe ser de al menos {{description.errors.minlength.requiredLength}}
+          </small>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <input [(ngModel)]="course.language" #language="ngModel" id="language" name="language" type="text"
+               class="validate" required minlength="6" maxlength="10"
+               pattern="español|inglés">
+        <label class="active" for="language">* Ingrese un idioma</label>
+        <span class="helper-text" data-error="Inválido" data-success="Correcto"></span>
+        <div *ngIf="language.touched && !language.valid">
+          <small *ngIf="language.errors.required" class="red-text">Campo es requerido</small>
+          <small *ngIf="language.errors.minlength" class="red-text">
+            Campo debe ser de al menos {{language.errors.minlength.requiredLength}}
+          </small>
+          <small *ngIf="language.errors.pattern" class="red-text">Idioma debe ser español o inglés</small>
+        </div>
+      </div>
+      <div class="input-field col s6">
+        <input [(ngModel)]="course.price" #price="ngModel" id="price" name="price" type="number"
+               class="validate" required minlength="0" maxlength="6">
+        <label class="active" for="price">* Ingrese un precio</label>
+        <span class="helper-text" data-error="Inválido" data-success="Correcto"></span>
+        <div *ngIf="price.touched && !price.valid">
+          <small *ngIf="price.errors.required" class="red-text">Campo es requerido</small>
+          <small *ngIf="price.errors.minlength" class="red-text">
+            Campo debe ser de al menos {{price.errors.minlength.requiredLength}}
+          </small>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <input [(ngModel)]="course.teacher" #teacher="ngModel" id="teacher" name="teacher" type="text"
+               class="validate" required minlength="8" maxlength="40">
+        <label class="active" for="teacher">* Ingrese un profesor</label>
+        <span class="helper-text" data-error="Inválido" data-success="Correcto"></span>
+        <div *ngIf="teacher.touched && !teacher.valid">
+          <small *ngIf="teacher.errors.required" class="red-text">Campo es requerido</small>
+          <small *ngIf="teacher.errors.minlength" class="red-text">
+            Campo debe ser de al menos {{teacher.errors.minlength.requiredLength}}
+          </small>
+        </div>
+      </div>
+      <div class="input-field col s6">
+        <input [(ngModel)]="course.technology" #technology="ngModel" id="technology" name="technology"
+               type="text"
+               class="validate" required minlength="2" maxlength="20">
+        <label class="active" for="technology">* Ingrese una tecnología</label>
+        <span class="helper-text" data-error="Inválido" data-success="Correcto"></span>
+        <div *ngIf="technology.touched && !technology.valid">
+          <small *ngIf="technology.errors.required" class="red-text">Campo es requerido</small>
+          <small *ngIf="technology.errors.minlength" class="red-text">
+            Campo debe ser de al menos {{technology.errors.minlength.requiredLength}}
+          </small>
+        </div>
+      </div>
+    </div>
+    <div class="center-align">
+      <button type="submit" class="btn"><i class="material-icons right">send</i>Enviar</button>
+    </div>
+  </form>
+</div>
